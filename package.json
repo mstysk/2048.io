@@ -4,8 +4,16 @@
   "description": "2046 game",
   "main": "./app/app.js",
   "scripts": {
-    "test": "echo `test`"
+    "build": "browserify --debug ./app/app.js > ./www/dist/bundle.js",
+    "build-dist": "NODE_ENV=production browserify ./app/app.js | uglifyjs -m > ./www/dist/bundle.js",
+    "watch": "watchify --debug ./app/app.js -v -o ./www/dist/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Masato Yoshioka",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "uglify-js": "^2.4.24",
+    "watchify": "^3.3.1"
+  }
 }
