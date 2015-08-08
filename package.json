@@ -1,0 +1,11 @@
+{
+  "name": "2048",
+  "version": "0.0.0",
+  "description": "2046 game",
+  "main": "./app/app.js",
+  "scripts": {
+    "test": "echo `test`"
+  },
+  "author": "Masato Yoshioka",
+  "license": "ISC"
+}
