@@ -1,4 +1,48 @@
 // 2048 less file
 
 //import 
+@import "./normalize.less";
+@import "./mixins.less";
 @import "./variables.less";
+
+//Title
+.main_title{
+    text-align: center;
+}
+//Board
+.Board{
+    box-sizing: border-box;
+    width: @board-width;
+    margin: 0 auto;
+    & &__board{
+        &:after{
+            .clear;
+        }
+        .border-style(#000, solid, 1px);
+        box-sizing: border-box;
+        text-align: center;
+        margin: 0 auto;
+        background-color: @board-background-color;
+    }
+    & &__cell{
+        float: left;
+        .border-style(#000, solid, 1px );
+        box-sizing: border-box;
+        .square( @cell-width );
+        line-height: @cell-width;
+        vertical-align: middle;
+        font-size: @cell-width / 3;
+        &.cell--color1{
+            background-color: @color1;
+        }
+        &.cell--color2{
+            background-color: @color2;
+        }
+        &.cell--color3{
+            background-color: @color3;
+        }
+        &.cell--color4{
+            background-color: @color4;
+        }
+    }
+}
