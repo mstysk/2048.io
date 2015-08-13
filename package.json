@@ -12,8 +12,22 @@
   "author": "Masato Yoshioka",
   "license": "ISC",
   "devDependencies": {
-    "browserify": "^11.0.1",
+    "browserify": "^9.0.8",
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.3",
+    "gulp-watchify": "^0.5.0",
+    "reactify": "^1.1.1",
     "uglify-js": "^2.4.24",
     "watchify": "^3.3.1"
+  },
+  "dependencies": {
+    "flux": "^2.0.3",
+    "object-assign": "^3.0.0",
+    "react": "^0.13.3"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
   }
 }
