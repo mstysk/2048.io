@@ -1,0 +1,176 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.clear {
+  content: " ";
+  display: table;
+  clear: both;
+}
+body {
+  box-sizing: border-box;
+  background-color: #b83b5e;
+  color: #FFF;
+}
+.main_title {
+  text-align: center;
+}
+.Board {
+  box-sizing: border-box;
+  width: 240px;
+  margin: 0 auto;
+}
+.Board .Board__status {
+  text-align: center;
+}
+.Board .Board__score {
+  text-align: right;
+}
+.Board .Board__board {
+  height: 240px;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #f4f49e;
+  position: relative;
+}
+.Board .Board__tile {
+  position: absolute;
+  font-family: arial;
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  font-size: 30px;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  letter-spacing: -1px;
+  text-align: center;
+  color: white;
+  transition: all 100ms linear;
+  line-height: 54px;
+}
+.Board .Board__tile.value2 {
+  background-color: #ebb26f;
+}
+.Board .Board__tile.value4 {
+  background-color: #ea6feb;
+}
+.Board .Board__tile.value8 {
+  background-color: #eb6fa3;
+}
+.Board .Board__tile.value16 {
+  background-color: #7a6feb;
+}
+.Board .Board__tile.value32 {
+  background-color: #af6feb;
+}
+.Board .Board__tile.value64 {
+  background-color: #6febcf;
+}
+.Board .Board__tile.value128 {
+  background-color: #6fbeeb;
+}
+.Board .Board__tile.value256 {
+  background-color: #afeb6f;
+}
+.Board .Board__tile.value512 {
+  background-color: #7aeb6f;
+}
+.Board .Board__tile.value1024 {
+  background-color: #e4eb6f;
+}
+.Board .Board__tile.value128,
+.Board .Board__tile.value256,
+.Board .Board__tile.value512 {
+  font-size: 24px;
+}
+.Board .Board__tile.value1024 {
+  font-size: 18px;
+}
+.Board .Board__button {
+  margin-top: 2px;
+  text-align: center;
+}
+.Board .Board__button button {
+  border-color: #333333;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+}
+.Board .Board__button button.new {
+  background-color: green;
+}
+.tile {
+  position: absolute;
+  font-family: arial;
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  font-size: 30px;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  letter-spacing: -1px;
+  text-align: center;
+  color: white;
+  transition: all 100ms linear;
+  line-height: 54px;
+}
+.a1,
+.b1,
+.c1,
+.d1 {
+  left: 5px;
+}
+.a2,
+.b2,
+.c2,
+.d2 {
+  left: 60px;
+}
+.a3,
+.b3,
+.c3,
+.d3 {
+  left: 115px;
+}
+.a4,
+.b4,
+.c4,
+.d4 {
+  left: 170px;
+}
+.a1,
+.a2,
+.a3,
+.a4 {
+  top: 5px;
+}
+.b1,
+.b2,
+.b3,
+.b4 {
+  top: 60px;
+}
+.c1,
+.c2,
+.c3,
+.c4 {
+  top: 115px;
+}
+.d1,
+.d2,
+.d3,
+.d4 {
+  top: 170px;
+}
