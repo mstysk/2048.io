@@ -14,35 +14,71 @@
     box-sizing: border-box;
     width: @board-width;
     margin: 0 auto;
+    & &__status{
+        text-align: center;
+    }
+    & &__score{
+        text-align: right;
+    }
     & &__board{
-        &:after{
-            .clear;
-        }
+        height: @board-width;
         .border-style(#000, solid, 1px);
         box-sizing: border-box;
         text-align: center;
         margin: 0 auto;
         background-color: @board-background-color;
+        position: relative;
     }
-    & &__cell{
-        float: left;
-        .border-style(#000, solid, 1px );
-        box-sizing: border-box;
-        .square( @cell-width );
-        line-height: @cell-width;
-        vertical-align: middle;
-        font-size: @cell-width / 3;
-        &.cell--color1{
-            background-color: @color1;
+    & &__tile{
+        .tile;
+        &.value2{    background-color:#ebb26f; }
+        &.value4{    background-color:#ea6feb; }
+        &.value8{    background-color:#eb6fa3; }
+        &.value16{   background-color:#7a6feb; }
+        &.value32{   background-color:#af6feb; }
+        &.value64{   background-color:#6febcf; }
+        &.value128{  background-color:#6fbeeb; }
+        &.value256{  background-color:#afeb6f; }
+        &.value512{  background-color:#7aeb6f; }
+        &.value1024{ background-color:#e4eb6f; }
+        &.value128,
+        &.value256,
+        &.value512{
+            font-size: @tile-font-size * .8;
         }
-        &.cell--color2{
-            background-color: @color2;
+        &.value1024{
+            font-size: @tile-font-size * .6;
         }
-        &.cell--color3{
-            background-color: @color3;
-        }
-        &.cell--color4{
-            background-color: @color4;
+    }
+    & &__button{
+        margin-top: 2px;
+        text-align: center;
+        button{
+            .border-style(#333, solid, 1px);
+            &.new{
+                background-color: green;
+            }
         }
     }
 }
+.tile{
+    position:absolute;
+    font-family: arial;
+    display:block;
+    .square( @tile-width);
+    font-size: @tile-font-size;
+    .border-style(#000, solid, 1px );
+    letter-spacing: -1px;
+    text-align:center;
+    color:white;
+    transition: all 100ms linear;
+    line-height: @tile-font-size * 1.8;
+}
+.a1, .b1, .c1, .d1{ left:5px; }
+.a2, .b2, .c2, .d2{ left:60px; }
+.a3, .b3, .c3, .d3{ left:115px; }
+.a4, .b4, .c4, .d4{ left:170px; }
+.a1, .a2, .a3, .a4{ top:5px; }
+.b1, .b2, .b3, .b4{ top:60px; }
+.c1, .c2, .c3, .c4{ top:115px; }
+.d1, .d2, .d3, .d4{ top:170px; }

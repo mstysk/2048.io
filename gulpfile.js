@@ -22,7 +22,8 @@ gulp.task("enable-watch-mode", function(){
 gulp.task("browserify", watchify(function(watchify){
     return gulp.src("./src/app/app.js")
             .pipe(watchify({
-                watch: watching
+                watch: watching,
+                debug: true
             }))
             .pipe(gulp.dest("./www/dist/js"));
 }));

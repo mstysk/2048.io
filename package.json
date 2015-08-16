@@ -4,8 +4,8 @@
   "description": "2046 game",
   "main": "./app/app.js",
   "scripts": {
-    "build": "browserify --debug ./app/app.js > ./www/dist/bundle.js",
-    "build-dist": "NODE_ENV=production browserify ./app/app.js | uglifyjs -m > ./www/dist/bundle.js",
+    "build": "browserify --debug ./src/app/app.js > ./www/dist/js/app.js",
+    "build-dist": "NODE_ENV=production browserify ./src/app/app.js | uglifyjs -m > ./www/dist/js/app.js",
     "watch": "watchify --debug ./app/app.js -v -o ./www/dist/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

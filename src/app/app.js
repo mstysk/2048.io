@@ -3,5 +3,5 @@ var Main  = require("./components/Main.react");
 
 React.render(
     <Main />,  
-    document.body
+    document.getElementById("content")
 );
