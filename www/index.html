@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>2048 Game</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="./dist/css/2048.css">   
 </head>
-<body>
+<body ontouchmove="event.preventDefault()">
 <!-- Header -->
 <h1 class="main_title">2048 Game</h1>
 <!-- Content -->

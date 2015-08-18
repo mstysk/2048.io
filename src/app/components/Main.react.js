@@ -217,7 +217,7 @@ console.log( e );
     render: function(){
         var status = !can_move(this.state)? " GameOver!": "";
         return (
-            <div className="Board">
+            <div className="Board" id="board">
                 <h2 className="Board__status">{status}</h2>
                 <h3 className="Board__score">
                     Score: {score_board(this.state)}
