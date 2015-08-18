@@ -128,10 +128,51 @@ var right = fold_order(["a","b","c","d"], ["4","3","2","1"], false);
 var up    = fold_order(["1","2","3","4"], ["a","b","c","d"], true);
 var down  = fold_order(["1","2","3","4"], ["d","c","b","a"], true);
 
+var xDown = null;
+var yDown = null;
 var Main = React.createClass({
     getInitialState: function(){
        return this.addTile(this.addTile(initial_board));
     },
+    handleTouchStart: function(e){
+        xDown = e.touches[0].clientX;
+        yDown = e.touches[0].clientY;
+console.log( e );
+    },
+    handleTouchEnd: function(e){
+        if( !xDown || !yDown ) return null;
+        var allow = null;
+        var xUp = e.changedTouches[0].clientX;
+        var yUp = e.changedTouches[0].clientY;
+
+        var xDiff = xDown -xUp;
+        var yDiff = yDown -yUp;
+
+        if (Math.abs(xDiff) > Math.abs(yDiff) ){
+            if( xDiff > 0 ){
+                allow = left;
+            }else{
+                allow = right;
+            }
+        }else{
+            if( yDiff > 0){
+                allow = up;
+            }else{
+                allow = down;
+            }
+        }
+        xDown = null;
+        yDown = null;                                             
+        if( allow
+            && this.setBoard(fold_board(this.state, allow))
+            && Math.floor(Math.random() * 30, 0) > 0){
+            setTimeout(function(){
+                this.setBoard(this.addTile(this.state));
+            }.bind(this), 100);
+        }
+
+    },
+
     keyHandler: function(e){
         var directions = {
             37: left,
@@ -147,6 +188,7 @@ var Main = React.createClass({
             }.bind(this), 100);
         }
     },
+    
     setBoard: function(new_board){
         if(!same_board(this.state, new_board)){
             this.setState(new_board);
@@ -169,6 +211,8 @@ var Main = React.createClass({
     },
     componentDidMount: function(){
         window.addEventListener("keydown", this.keyHandler, false);
+        window.addEventListener("touchstart", this.handleTouchStart, false);
+        window.addEventListener("touchend", this.handleTouchEnd, false);
     },
     render: function(){
         var status = !can_move(this.state)? " GameOver!": "";
